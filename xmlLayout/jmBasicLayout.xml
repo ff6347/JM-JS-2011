@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Root>
+<seite id="98">
+<!-- 185, JustKeys, bis 999,- einsteiger digitalpianos -->
+<importDatum>17.07.2010 10:38</importDatum>
+<seitenElemente><einleitung_de></einleitung_de>
+<seitenTitel>Bis 999,- Einsteiger Digitalpianos</seitenTitel>
+<gruppen><gruppenTitel01></gruppenTitel01>
+<gruppenTitel02></gruppenTitel02>
+<gruppenTitel04>ARIUS YDP-S31</gruppenTitel04>
+<gruppenTitel05>ARIUS YDP-140</gruppenTitel05>
+<gruppenTitel06></gruppenTitel06>
+<gruppenTitel03></gruppenTitel03>
+</gruppen>
+<tabellen>
+<tabelleMitLN><tabelleGruppe01>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+1	128954	F-110 SB	schwarz seidenmatt	999,--
+2	128953	F-110 WH	weiss seidenmatt	999,--</tabelleGruppe01><tabelleGruppe02>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+6	134965	AP-220	Celviano AP220 Finish: Rosewood	0,--</tabelleGruppe02><tabelleGruppe04>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+4	124902	YDP-S31R Clavinova		749,--</tabelleGruppe04><tabelleGruppe05>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+	112532	YDP-140C ARIUS	Kirsche/Cherry	779,--
+5	112531	YDP-140  ARIUS	Rosewood/Palisander	779,--</tabelleGruppe05><tabelleGruppe06>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+3	244089	RP101-ERW - Roland Rosewood	(Palisander) inkl. KSC40 Stand	999,--</tabelleGruppe06><tabelleGruppe03>Nr.	Art.-Nr.	Produkt	Beschreibung	Euro
+	124984	LP 350 Slimlinepiano Schwarz	incl. Ständer	999,--
+7	124985	LP 350 Slimlinepiano Weiss	incl. Ständer	999,--</tabelleGruppe03>
+</tabelleMitLN>
+<tabelleOhneLN><tabelleGruppe01>Art.-Nr.	Produkt	Beschreibung	Euro
+128954	F-110 SB	schwarz seidenmatt	999,--
+128953	F-110 WH	weiss seidenmatt	999,--</tabelleGruppe01><tabelleGruppe02>Art.-Nr.	Produkt	Beschreibung	Euro
+134965	AP-220	Celviano AP220 Finish: Rosewood	0,--</tabelleGruppe02><tabelleGruppe04>Art.-Nr.	Produkt	Beschreibung	Euro
+124902	YDP-S31R Clavinova		749,--</tabelleGruppe04><tabelleGruppe05>Art.-Nr.	Produkt	Beschreibung	Euro
+112532	YDP-140C ARIUS	Kirsche/Cherry	779,--
+112531	YDP-140  ARIUS	Rosewood/Palisander	779,--</tabelleGruppe05><tabelleGruppe06>Art.-Nr.	Produkt	Beschreibung	Euro
+244089	RP101-ERW - Roland Rosewood	(Palisander) inkl. KSC40 Stand	999,--</tabelleGruppe06><tabelleGruppe03>Art.-Nr.	Produkt	Beschreibung	Euro
+124984	LP 350 Slimlinepiano Schwarz	incl. Ständer	999,--
+124985	LP 350 Slimlinepiano Weiss	incl. Ständer	999,--</tabelleGruppe03>
+</tabelleOhneLN>
+<tabelleMinimal><tabelleGruppe01>Art.-Nr.	Beschreibung		Euro
+128954	schwarz seidenmatt		999,--
+128953	weiss seidenmatt		999,--</tabelleGruppe01><tabelleGruppe02>Art.-Nr.	Beschreibung		Euro
+134965	Celviano AP220 Finish: Rosewood		0,--</tabelleGruppe02><tabelleGruppe04>Art.-Nr.	Beschreibung		Euro
+124902			749,--</tabelleGruppe04><tabelleGruppe05>Art.-Nr.	Beschreibung		Euro
+112532	Kirsche/Cherry		779,--
+112531	Rosewood/Palisander		779,--</tabelleGruppe05><tabelleGruppe06>Art.-Nr.	Beschreibung		Euro
+244089	(Palisander) inkl. KSC40 Stand		999,--</tabelleGruppe06><tabelleGruppe03>Art.-Nr.	Beschreibung		Euro
+124984	incl. Ständer		999,--
+124985	incl. Ständer		999,--</tabelleGruppe03>
+</tabelleMinimal>
+<tabelleMinimalMitLN><tabelleGruppe01>Nr.	Art.-Nr.	Beschreibung		Euro
+1	128954	schwarz seidenmatt		999,--
+2	128953	weiss seidenmatt		999,--</tabelleGruppe01><tabelleGruppe02>Nr.	Art.-Nr.	Beschreibung		Euro
+6	134965	Celviano AP220 Finish: Rosewood		0,--</tabelleGruppe02><tabelleGruppe04>Nr.	Art.-Nr.	Beschreibung		Euro
+4	124902			749,--</tabelleGruppe04><tabelleGruppe05>Nr.	Art.-Nr.	Beschreibung		Euro
+	112532	Kirsche/Cherry		779,--
+5	112531	Rosewood/Palisander		779,--</tabelleGruppe05><tabelleGruppe06>Nr.	Art.-Nr.	Beschreibung		Euro
+3	244089	(Palisander) inkl. KSC40 Stand		999,--</tabelleGruppe06><tabelleGruppe03>Nr.	Art.-Nr.	Beschreibung		Euro
+	124984	incl. Ständer		999,--
+7	124985	incl. Ständer		999,--</tabelleGruppe03>
+</tabelleMinimalMitLN>
+</tabellen>
+<herstellerLogos>
+<ROLAND_6681 href="file:///files/acmeLogo.jpg">---roland</ROLAND_6681>
+<CASIO_6687 href="file:///files/acmeLogo.jpg">---casio</CASIO_6687>
+<YAMAHA_6684 href="file:///files/acmeLogo.jpg">---yamaha</YAMAHA_6684>
+<KORG_6679 href="file:///files/acmeLogo.jpg">---korg</KORG_6679>
+</herstellerLogos>
+</seitenElemente><artikel>
+<!-- ROLAND, F-110 SB -->
+<artikelInformation>
+<iPrioritaet>fokus</iPrioritaet>
+<iHersteller>ROLAND</iHersteller>
+<iArtikelNr>Art-Nr. 128954</iArtikelNr>
+<iArtikelBezeichnung>F-110 SB</iArtikelBezeichnung>
+<iArtikelBeschreibung>schwarz seidenmatt</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>1. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer>1</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6681_ROLAND/128954_00_N_4881f937.jpg"></bild>
+<laufNummerBild>1</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 128954 </artikelNr>
+<laufNummer>1 </laufNummer><artikelBezeichnungMitLN>F-110 SB</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>schwarz seidenmatt</artikelBeschreibung>
+<artikelText>Das neueste Mitglied in Rolands Kompakt Digital Piano-Familie ist das elegante F-110. Es besitzt ein hochwertig verarbeitetes Gehäuse in Schwarz- oder Weiß-Seidenmatt. Damit passt es perfekt in jede Wohnungseinrichtung. Mit seinem in 88 Einzeltasten gesampelten Pianoklang, dem einzigartigen kompakten Gehäusedesign mit speziellem Falt-Deckel, dem erstklassigen Spielgefühl und der einfachen Bedienung ist es die erste Wahl für preisbewusste Musiker, die Wert auf ein hochwertiges, platzsparendes Instrument legen. 
+&lt; Spezieller Falt-Deckel, der in aufgeklapptem Zustand als Notenpult dient
+&lt; Finish in Schwarz- oder Weiß-Seidenmatt
+&lt; Luxuriöse Pedaleinheit mit drei Pedalen, im Ständer integriert
+&lt; 88-tastiger Stereo Multisample-Pianoklang, große Auswahl zusätzlicher hochwertiger Sounds
+&lt; 128-stimmig polyphon
+&lt; PHA alpha II dynamisch gewichtete Hammermechanik-Tastatur
+&lt; 3-Band Digital EQ
+&lt; 3-spur Rekorder (99 Songs)
+&lt; 2x 12W Ausgangsleistung
+&lt; B 1,36 x T 30,2 x H 77,8 (Deckel geschlossen) cm
+&lt; 35.0 Kg Gewicht</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>1	128954	F-110 SB	schwarz seidenmatt	€ 999,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>1	128954	F-110 SB		€ 999,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>1	128954	schwarz seidenmatt		€ 999,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>128954	 F-110 SB	schwarz seidenmatt	€ 999,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>128954	 F-110 SB		€ 999,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>128954	 schwarz seidenmatt		€ 999,--</artikelZeileABPohneLN>
+<preis>€   999,--</preis>
+</artikel><artikel>
+<!-- ROLAND, F-110 WH -->
+<artikelInformation>
+<iPrioritaet>fokus</iPrioritaet>
+<iHersteller>ROLAND</iHersteller>
+<iArtikelNr>Art-Nr. 128953</iArtikelNr>
+<iArtikelBezeichnung>F-110 WH</iArtikelBezeichnung>
+<iArtikelBeschreibung>weiss seidenmatt</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>1. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer>2</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6681_ROLAND/128953_01_N_ebffe7b1.jpg"></bild>
+<laufNummerBild>2</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 128953 </artikelNr>
+<laufNummer>2 </laufNummer><artikelBezeichnungMitLN>F-110 WH</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>weiss seidenmatt</artikelBeschreibung>
+<artikelText>Das neueste Mitglied in Rolands Kompakt Digital Piano-Familie ist das elegante F-110. Es besitzt ein hochwertig verarbeitetes Gehäuse in Schwarz- oder Weiß-Seidenmatt. Damit passt es perfekt in jede Wohnungseinrichtung. Mit seinem in 88 Einzeltasten gesampelten Pianoklang, dem einzigartigen kompakten Gehäusedesign mit speziellem Falt-Deckel, dem erstklassigen Spielgefühl und der einfachen Bedienung ist es die erste Wahl für preisbewusste Musiker, die Wert auf ein hochwertiges, platzsparendes Instrument legen. 
+&lt; Spezieller Falt-Deckel, der in aufgeklapptem Zustand als Notenpult dient
+&lt; Finish in Schwarz- oder Weiß-Seidenmatt
+&lt; Luxuriöse Pedaleinheit mit drei Pedalen, im Ständer integriert
+&lt; 88-tastiger Stereo Multisample-Pianoklang, große Auswahl zusätzlicher hochwertiger Sounds
+&lt; 128-stimmig polyphon
+&lt; PHA alpha II dynamisch gewichtete Hammermechanik-Tastatur
+&lt; 3-Band Digital EQ
+&lt; 3-spur Rekorder (99 Songs)
+&lt; 2x 12W Ausgangsleistung
+&lt; B 1,36 x T 30,2 x H 77,8 (Deckel geschlossen) cm
+&lt; 35.0 Kg Gewicht</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>2	128953	F-110 WH	weiss seidenmatt	€ 999,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>2	128953	F-110 WH		€ 999,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>2	128953	weiss seidenmatt		€ 999,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>128953	 F-110 WH	weiss seidenmatt	€ 999,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>128953	 F-110 WH		€ 999,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>128953	 weiss seidenmatt		€ 999,--</artikelZeileABPohneLN>
+<preis>€   999,--</preis>
+</artikel><artikel>
+<!-- CASIO, AP-220 -->
+<artikelInformation>
+<iPrioritaet>normal</iPrioritaet>
+<iHersteller>CASIO</iHersteller>
+<iArtikelNr>Art-Nr. 134965</iArtikelNr>
+<iArtikelBezeichnung>AP-220</iArtikelBezeichnung>
+<iArtikelBeschreibung>Celviano AP220 Finish: Rosewood</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>2. Gruppenfarbe</iGruppenFarbe>
+<iKommentar>Casio AP-220</iKommentar>
+<iLaufNummer>6</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6687_CASIO/134965_01_N_cea01ce1.jpg"></bild>
+<laufNummerBild>6</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 134965 </artikelNr>
+<laufNummer>6 </laufNummer><artikelBezeichnungMitLN>AP-220</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>Celviano AP220 Finish: Rosewood</artikelBeschreibung>
+<artikelText>Die 16 AiF-Klangfarben des AP-220 erklingen dank der fortschrittlichen Sampling-Technologie in feinsten Nuancen und bilden den komplexen Flügelklang äußerst authentisch nach. Die Tastatur mit skalierter Hammermechanik verfügt über drei Sensoren, um auch noch die zartesten Abstufungen im Anschlag spielen zu können.
+Dank komplexer Stereo-Aufnahmen eines hochwertigen Konzertflügels (Samples) mit 4 Dynamikstufen erleben Sie einen besonders authentischen Klang und können über sämtliche Zwischenstufen von piano bis forte spielen - ohne klangliche Verfärbungen oder hörbare Sprünge.
+Ideal für den Unterricht: Mit der neuen Duett-Funktion können Lehrer und Schüler parallel spielen. Das AP-220 lässt sich in zwei Tastaturbereiche aufteilen, die individuell transponiert werden können.
+Mit der Funktion PANEL-Lock wird das Bedienfeld vor einem versehentlichen Verstellen während des Spielens geschützt.</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>6	134965	AP-220	Celviano AP220 Finish: Rosewood	€ 0,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>6	134965	AP-220		€ 0,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>6	134965	Celviano AP220 Finish: Rosewood		€ 0,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>134965	 AP-220	Celviano AP220 Finish: Rosewood	€ 0,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>134965	 AP-220		€ 0,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>134965	 Celviano AP220 Finish: Rosewood		€ 0,--</artikelZeileABPohneLN>
+<preis>€   0,--</preis>
+</artikel><artikel>
+<!-- KORG, LP 350 Slimlinepiano Weiss, LP 350 -->
+<artikelInformation>
+<iPrioritaet>normal</iPrioritaet>
+<iHersteller>KORG</iHersteller>
+<iArtikelNr>Art-Nr. 124985</iArtikelNr>
+<iArtikelBezeichnung>LP 350 Slimlinepiano Weiss</iArtikelBezeichnung>
+<iArtikelBeschreibung>incl. Ständer</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>3. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer>7</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6679_KORG/124985_00_N_6f344f39.jpg"></bild>
+<bild id="1" href="file:///files/6679_KORG/124985_01_N_3b5341ca.jpg"></bild>
+<bild id="2" href="file:///files/6679_KORG/124985_02_N_478cbea9.jpg"></bild>
+<bild id="3" href="file:///files/6679_KORG/124985_03_N_2a857897.jpg"></bild>
+<laufNummerBild>7</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 124985 </artikelNr>
+<laufNummer>7 </laufNummer><artikelBezeichnungMitLN>LP 350 SLIMLINEPIANO WEISS</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>incl. Ständer</artikelBeschreibung>
+<artikelText>Das Digital-Piano LP-350 ist ein ebenso schlankes wie schickes Design-Piano mit einem expressiven Klang. Das LP-350 fügt sich von der Optik her in jedes Ambiente ein. Mit einer Tiefe von nicht einmal 28cm beweist dieses pfiffige Instrument zudem, dass man auch ohne klobige Maße imposant und ansprechend daherkommen kann. Solange Sie nicht auf dem LP-350 spielen, präsentiert es sich als Edelablage ohne sichtbare Scharniere an der Oberseite und fügt sich perfekt in Ihr Ambiente ein. Trotz seiner kompakten Maße ist das LP-350 jedoch ein hochwertiges, modernes Digital-Piano mit Hammertastatur und einer Klangfülle, die Sie begeistern wird.</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>7	124985	LP 350 Slimlinepiano Weiss	incl. Ständer	€ 999,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>7	124985	LP 350 Slimlinepiano Weiss		€ 999,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>7	124985	incl. Ständer		€ 999,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>124985	 LP 350 Slimlinepiano Weiss	incl. Ständer	€ 999,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>124985	 LP 350 Slimlinepiano Weiss		€ 999,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>124985	 incl. Ständer		€ 999,--</artikelZeileABPohneLN>
+<preis>€   999,--</preis>
+</artikel><artikel>
+<!-- YAMAHA, YDP-S31R Clavinova, ARIUS YDP-S31 -->
+<artikelInformation>
+<iPrioritaet>normal</iPrioritaet>
+<iHersteller>YAMAHA</iHersteller>
+<iArtikelNr>Art-Nr. 124902</iArtikelNr>
+<iArtikelBezeichnung>YDP-S31R Clavinova</iArtikelBezeichnung>
+<iArtikelBeschreibung></iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>4. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer>4</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6684_YAMAHA/124902_00_N_6bfa2738.jpg"></bild>
+<laufNummerBild>4</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 124902 </artikelNr>
+<laufNummer>4 </laufNummer><artikelBezeichnungMitLN>YDP-S31R CLAVINOVA</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung></artikelBeschreibung>
+<artikelText>Trotz der geringen Größe des Yamaha YDP S-31 Arius wurden keine Kompromisse hinsichtlich der Spielbarkeit eingegangen. Die Graded Hammer Standard (GHS) Tastatur ahmt den natürlichen Tastenanschlag eines akustischen Pianos nach.
+Eingebaute, in stereo gesampelte AWM-Instrument-Voices, die den gesamten Notenumfang reproduzieren - von kraftvollen Bässen bis hin zum Diskant.
+Das Dämpferpedal des Yamaha YDP S-31 Arius besitzt einen authentischen "Halbdämpfer"-Effekt, wodurch Sie eine genaue Kontrolle über das Ausklingen des Klangs erhalten. Eingebaute Aufnahmefunktionen und ein Metronom machen das Instrument ideal für Klavierstunden und Übungszwecke.
+
+
+
+&lt; 88 Tasten Graded Hammer Keyboard 
+&lt; Tasten Sensibilität: Hard, Medium, Soft, Fixed 
+&lt; Tastaturabdeckung
+&lt; 6 Voices
+&lt; 64-stimmig polyphon 
+&lt; Advanced-Wave-Memory- (AWM-) Stereo-Sampling
+&lt; Reverb
+&lt; Song-Recorder (ca. 11.000 Noten)</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>4	124902	YDP-S31R Clavinova		€ 749,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>4	124902	YDP-S31R Clavinova		€ 749,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>4	124902			€ 749,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>124902	 YDP-S31R Clavinova		€ 749,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>124902	 YDP-S31R Clavinova		€ 749,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>124902	 		€ 749,--</artikelZeileABPohneLN>
+<preis>€   749,--</preis>
+</artikel><artikel>
+<!-- YAMAHA, YDP-140 ARIUS, ARIUS YDP-140 -->
+<artikelInformation>
+<iPrioritaet>normal</iPrioritaet>
+<iHersteller>YAMAHA</iHersteller>
+<iArtikelNr>Art-Nr. 112531</iArtikelNr>
+<iArtikelBezeichnung>YDP-140  ARIUS</iArtikelBezeichnung>
+<iArtikelBeschreibung>Rosewood/Palisander</iArtikelBeschreibung>
+<iDealNeuTip>tip</iDealNeuTip>
+<iGruppenFarbe>5. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer>5</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6684_YAMAHA/112531_01_N_7ce9c03d.jpg"></bild>
+<laufNummerBild>5</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 112531 </artikelNr>
+<laufNummer>5 </laufNummer><artikelBezeichnungMitLN>YDP-140  ARIUS</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>Rosewood/Palisander</artikelBeschreibung>
+<artikelText>Das attraktive Einsteiger-Digitalpiano mit neuem dynamischen Piano-Sample!
+&lt; 88 Tasten Graded Hammer (GHS) und mattschwarze Decklagen
+&lt; 6 Klangfarben
+&lt; 64fach polyphon
+&lt; Dynamisches Stereo Sample mit 3 Dynamik-Stufen
+&lt; 4 Reverb Typen
+&lt; Dual / Layer Funktion
+&lt; 1-Spur Aufnahme
+&lt; Half Pedal Funktion
+&lt; Pedalfarbe: Gold poliert
+&lt; Tastaturabdeckung
+&lt; 2 x 6 Watt</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>5	112531	YDP-140  ARIUS	Rosewood/Palisander	€ 779,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>5	112531	YDP-140  ARIUS		€ 779,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>5	112531	Rosewood/Palisander		€ 779,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>112531	 YDP-140  ARIUS	Rosewood/Palisander	€ 779,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>112531	 YDP-140  ARIUS		€ 779,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>112531	 Rosewood/Palisander		€ 779,--</artikelZeileABPohneLN>
+<preis>€   779,--</preis>
+</artikel><artikel>
+<!-- ROLAND, RP101-ERW - Roland Rosewood -->
+<artikelInformation>
+<iPrioritaet>normal</iPrioritaet>
+<iHersteller>ROLAND</iHersteller>
+<iArtikelNr>Art-Nr. 244089</iArtikelNr>
+<iArtikelBezeichnung>RP101-ERW - Roland Rosewood</iArtikelBezeichnung>
+<iArtikelBeschreibung>(Palisander) inkl. KSC40 Stand</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>6. Gruppenfarbe</iGruppenFarbe>
+<iKommentar>ROLAND RP-101 -&gt; FOKUS-Artikel</iKommentar>
+<iLaufNummer>3</iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6681_ROLAND/244089_01_N_e50c00df.jpg"></bild>
+<laufNummerBild>3</laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 244089 </artikelNr>
+<laufNummer>3 </laufNummer><artikelBezeichnungMitLN>RP101-ERW - ROLAND ROSEWOOD</artikelBezeichnungMitLN><artikelBezeichnung></artikelBezeichnung>
+<artikelBeschreibung>(Palisander) inkl. KSC40 Stand</artikelBeschreibung>
+<artikelText>&lt; 88er PHA Alpha II-Tastatur (Progressive Hammer Action-Mechanik)
+&lt; Stereo Sample-Pianoklänge mit Brillance- und Dämpferresonanz-Funktionen
+&lt; Eingebauter Song Recorder
+&lt; 25 W Stereo-Lautsprechersystem
+&lt; Tastaturdeckel, 3 Pedale, Kopfhörerhaken</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>3	244089	RP101-ERW - Roland Rosewood	(Palisander) inkl. KSC40 Stand	€ 999,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>3	244089	RP101-ERW - Roland Rosewood		€ 999,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>3	244089	(Palisander) inkl. KSC40 Stand		€ 999,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>244089	 RP101-ERW - Roland Rosewood	(Palisander) inkl. KSC40 Stand	€ 999,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>244089	 RP101-ERW - Roland Rosewood		€ 999,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>244089	 (Palisander) inkl. KSC40 Stand		€ 999,--</artikelZeileABPohneLN>
+<preis>€   999,--</preis>
+</artikel><artikel>
+<!-- KORG, LP 350 Slimlinepiano Schwarz -->
+<artikelInformation>
+<iPrioritaet>klein</iPrioritaet>
+<iHersteller>KORG</iHersteller>
+<iArtikelNr>Art-Nr. 124984</iArtikelNr>
+<iArtikelBezeichnung>LP 350 Slimlinepiano Schwarz</iArtikelBezeichnung>
+<iArtikelBeschreibung>incl. Ständer</iArtikelBeschreibung>
+<iDealNeuTip>weekend</iDealNeuTip>
+<iGruppenFarbe>3. Gruppenfarbe</iGruppenFarbe>
+<iKommentar></iKommentar>
+<iLaufNummer></iLaufNummer>
+</artikelInformation>
+<laufNummerBild></laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 124984 </artikelNr>
+<laufNummer></laufNummer><artikelBezeichnungMitLN></artikelBezeichnungMitLN><artikelBezeichnung>LP 350 SLIMLINEPIANO SCHWARZ</artikelBezeichnung>
+<artikelBeschreibung>incl. Ständer</artikelBeschreibung>
+<artikelText>Das Digital-Piano LP-350 ist ein ebenso schlankes wie schickes Design-Piano mit einem expressiven Klang. Das LP-350 fügt sich von der Optik her in jedes Ambiente ein. Mit einer Tiefe von nicht einmal 28cm beweist dieses pfiffige Instrument zudem, dass man auch ohne klobige Maße imposant und ansprechend daherkommen kann. Solange Sie nicht auf dem LP-350 spielen, präsentiert es sich als Edelablage ohne sichtbare Scharniere an der Oberseite und fügt sich perfekt in Ihr Ambiente ein. Trotz seiner kompakten Maße ist das LP-350 jedoch ein hochwertiges, modernes Digital-Piano mit Hammertastatur und einer Klangfülle, die Sie begeistern wird.</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>	124984	LP 350 Slimlinepiano Schwarz	incl. Ständer	€ 999,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>	124984	LP 350 Slimlinepiano Schwarz		€ 999,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>	124984	incl. Ständer		€ 999,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>124984	 LP 350 Slimlinepiano Schwarz	incl. Ständer	€ 999,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>124984	 LP 350 Slimlinepiano Schwarz		€ 999,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>124984	 incl. Ständer		€ 999,--</artikelZeileABPohneLN>
+<preis>€   999,--</preis>
+</artikel><artikel>
+<!-- YAMAHA, YDP-140C ARIUS, ARIUS YDP-140 -->
+<artikelInformation>
+<iPrioritaet>klein</iPrioritaet>
+<iHersteller>YAMAHA</iHersteller>
+<iArtikelNr>Art-Nr. 112532</iArtikelNr>
+<iArtikelBezeichnung>YDP-140C ARIUS</iArtikelBezeichnung>
+<iArtikelBeschreibung>Kirsche/Cherry</iArtikelBeschreibung>
+<iDealNeuTip></iDealNeuTip>
+<iGruppenFarbe>5. Gruppenfarbe</iGruppenFarbe>
+<iKommentar>YAMAHA YDP-140 Bilder austauschen s.Focus(cherry Version m. Bild featuren)</iKommentar>
+<iLaufNummer></iLaufNummer>
+</artikelInformation>
+<bild id="0" href="file:///files/6684_YAMAHA/112532_01_N_c7091f83.jpg"></bild>
+<laufNummerBild></laufNummerBild>
+<textPlatzieren><artikelNr> Art-Nr. 112532 </artikelNr>
+<laufNummer></laufNummer><artikelBezeichnungMitLN></artikelBezeichnungMitLN><artikelBezeichnung>YDP-140C ARIUS</artikelBezeichnung>
+<artikelBeschreibung>Kirsche/Cherry</artikelBeschreibung>
+<artikelText>Das attraktive Einsteiger-Digitalpiano mit neuem dynamischen Piano-Sample!
+&lt; 88 Tasten Graded Hammer (GHS) und mattschwarze Decklagen
+&lt; 6 Klangfarben
+&lt; 64fach polyphon
+&lt; Dynamisches Stereo Sample mit 3 Dynamik-Stufen
+&lt; 4 Reverb Typen
+&lt; Dual / Layer Funktion
+&lt; 1-Spur Aufnahme
+&lt; Half Pedal Funktion
+&lt; Pedalfarbe: Gold poliert
+&lt; Tastaturabdeckung
+&lt; 2 x 6 Watt</artikelText>
+<artikelText_Aufzaehlung></artikelText_Aufzaehlung>
+</textPlatzieren>
+<artikelZeileANBPmitLN>	112532	YDP-140C ARIUS	Kirsche/Cherry	€ 779,--</artikelZeileANBPmitLN>
+<artikelZeileANPmitLN>	112532	YDP-140C ARIUS		€ 779,--</artikelZeileANPmitLN>
+<artikelZeileABPmitLN>	112532	Kirsche/Cherry		€ 779,--</artikelZeileABPmitLN>
+<artikelZeileANBPohneLN>112532	 YDP-140C ARIUS	Kirsche/Cherry	€ 779,--</artikelZeileANBPohneLN>
+<artikelZeileANPohneLN>112532	 YDP-140C ARIUS		€ 779,--</artikelZeileANPohneLN>
+<artikelZeileABPohneLN>112532	 Kirsche/Cherry		€ 779,--</artikelZeileABPohneLN>
+<preis>€   779,--</preis>
+</artikel></seite></Root>
