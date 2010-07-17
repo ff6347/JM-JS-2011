@@ -17,9 +17,9 @@ main();
 function main(){
 	
 	
-	var myOS_is_Winndows;
+	var myOS_is_Windows;
 	try{
-	 myOS_is_Winndows = checkOS();
+	 myOS_is_Windows = checkOS();
 	} catch (e){
 		alert("ERROR: I dont know wich Operating System you are using\n"+ e );
 		exit();
@@ -62,6 +62,12 @@ function main(){
 		exit();
 	}
 	
+	makeGroupElements(myDoc);
+	
+//	for(var i = 1; i < 11; i++){
+//		sortByAttributes(myDoc,i);
+//		
+//	}
 	var myFrame = myPage.textFrames.add();
 	myFrame.geometricBounds = myGetColumns(myDoc,myPage);
 
@@ -69,9 +75,14 @@ function main(){
 
 }
 
+/**
+ * this makes attributes from the element artikelInformation
+ * @param myDoc
+ * @returns nothing
+ */
 function makeAttributesFromInfo(myDoc){
 
-	var myRuleSet = new Array(new FindInfoElement());
+	var myRuleSet = new Array(new findInfoElement());
 	with(myDoc){
 	var elements = xmlElements;
 	__processRuleSet(elements.everyItem(), myRuleSet);
@@ -79,8 +90,12 @@ function makeAttributesFromInfo(myDoc){
 	}
 }
 	
-function FindInfoElement(){
-	this.name = "FindInfoElement";
+/**
+ * this is the RuleSet for makeAttributesFromInfo
+ * @returns nothing
+ */
+function findInfoElement(){
+	this.name = "findInfoElement";
 	this.xpath = "/Root/seite/artikel/artikelInformation";
 	this.apply = function(myElement, myRuleProcessor){
 		var myItem;
@@ -94,6 +109,66 @@ function FindInfoElement(){
 
 }
 
+
+/**
+ * not used right now
+ * @param myDoc
+ * @param count
+ * @returns
+ */
+function sortByAttributes(myDoc,count){
+
+	var myRuleSet = new Array(new findGroupAttribute(count));
+	with(myDoc){
+	var elements = xmlElements;
+	__processRuleSet(elements.everyItem(), myRuleSet);
+
+	}
+}
+
+/**
+ * not used right now
+ * @param count
+ * @returns
+ */
+function findGroupAttribute(count){
+	this.name = "findGroupAttribute";
+	this.xpath = "/Root/seite/artikel[@iGruppenFarbe ='"+count.toString()+". Gruppenfarbe']";
+	this.apply = function(myElement, myRuleProcessor){
+		__skipChildren(myRuleProcessor);
+		myElement.move(LocationOptions.UNKNOWN,myElement.parent.xmlElements.item(-1));
+		}
+}
+
+/**
+ * this makes new elements for grouping all the <artikel> elements
+ * @param myDoc
+ * @returns
+ */
+function makeGroupElements(myDoc){
+	var myRuleSet = new Array(new findPage());
+	with(myDoc){
+	var elements = xmlElements;
+	__processRuleSet(elements.everyItem(), myRuleSet);
+	}
+}
+/**
+ * this is the function for makeGroupElements
+ * @returns
+ */
+function findPage(){
+	this.name = "findPage";
+	this.xpath = "/Root/seite";
+	this.apply = function(myElement, myRuleProcessor){
+		
+			for(var i = 10; i > 0; i--){
+			var myNewGroupElement = myElement.xmlElements.add("group");
+			myNewGroupElement.xmlAttributes.add("id",i.toString());
+			myNewGroupElement.move(LocationOptions.AT_BEGINNING,myElement);
+			}
+		}
+
+}
 
 /**
  * the pulldown dialog to choose the page to place the content to
