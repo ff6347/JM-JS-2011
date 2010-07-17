@@ -161,7 +161,7 @@ function findPage(){
 	this.xpath = "/Root/seite";
 	this.apply = function(myElement, myRuleProcessor){
 		
-			for(var i = 10; i > 0; i--){
+			for(var i = 10; i >= 0; i--){
 			var myNewGroupElement = myElement.xmlElements.add("group");
 			myNewGroupElement.xmlAttributes.add("id",i.toString());
 			myNewGroupElement.move(LocationOptions.AT_BEGINNING,myElement);
