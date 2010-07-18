@@ -49,8 +49,21 @@ function main(){
  alert("No i could not make your Attributes for processing the xml" + e);
  exit();
  }
+ 
 	
 	
+
+	
+	makeGroupElements(myDoc);
+	
+	for (var i = 1 ; i < 11 ;i++ ){
+ 	sortToGroupsByAttributes(myDoc,i);
+	}
+
+	
+	
+// -------------------------
+// 	From here on it does something on the page
 	var myPageName;
 	var myPage;
 	try{
@@ -61,13 +74,6 @@ function main(){
 		alert("ERROR: Sorry cant find the page u want\n "+e);
 		exit();
 	}
-	
-	makeGroupElements(myDoc);
-	
-//	for(var i = 1; i < 11; i++){
-//		sortByAttributes(myDoc,i);
-//		
-//	}
 	var myFrame = myPage.textFrames.add();
 	myFrame.geometricBounds = myGetColumns(myDoc,myPage);
 
@@ -105,18 +111,18 @@ function findInfoElement(){
 			
 			myElement.parent.xmlAttributes.add(myItem.markupTag.name, myItem.texts.item(0).contents);	
 			}
-			}
+		}
 
 }
 
 
 /**
- * not used right now
+ * reorganizes the xmlStructure in element <seite> to groups
  * @param myDoc
  * @param count
  * @returns
  */
-function sortByAttributes(myDoc,count){
+function sortToGroupsByAttributes(myDoc,count){
 
 	var myRuleSet = new Array(new findGroupAttribute(count));
 	with(myDoc){
@@ -127,17 +133,21 @@ function sortByAttributes(myDoc,count){
 }
 
 /**
- * not used right now
+ * moves the grouped items into a new xmlElement
+ * needed for sortToGroupsByAttributes(myDoc,count)
+ * needs the for loop to process
  * @param count
  * @returns
  */
 function findGroupAttribute(count){
+
 	this.name = "findGroupAttribute";
-	this.xpath = "/Root/seite/artikel[@iGruppenFarbe ='"+count.toString()+". Gruppenfarbe']";
+	this.xpath = "/Root/seite/artikel[@iGruppenFarbe ='"+count+". Gruppenfarbe']";
 	this.apply = function(myElement, myRuleProcessor){
 		__skipChildren(myRuleProcessor);
-		myElement.move(LocationOptions.UNKNOWN,myElement.parent.xmlElements.item(-1));
+		myElement.move(LocationOptions.UNKNOWN,myElement.parent.xmlElements.item(count));
 		}
+	
 }
 
 /**
