@@ -9,6 +9,8 @@
 // provide a full
 // path to the file in the next line.
 #include "./meta/glue code.jsx";
+#include "./meta/processXML.js";
+#include "./meta/setupStyles.js";
 
 main();
 // ------------
@@ -39,11 +41,16 @@ function main(){
 		var myRoot;
 		try {
 			myRoot = myDoc.importXML(File.openDialog("Choose your .xml file"));
+			
 		} catch (e) {
 			alert("ERROR: :( Sorry, your XML Document seems broken.\n" + e);
 			exit();
 		}
-
+		//Count all items in 
+		numOfItems = countItems(myDoc);
+		
+//		alert("You have "+numOfItems+" Items");
+		
 		try{
 			makeAttributesFromInfo(myDoc);
 			
@@ -52,43 +59,30 @@ function main(){
 		exit();
 		}
 
-		try{
-			makeGroupElements(myDoc);
-		}catch(e){
-			
-			alert("ERROR: Could not make the Group elements" + e);
-			exit();
-		}
 		
 		try{
-			for (var i = 1 ; i < 11 ;i++ ){
-				sortToGroupsByAttributes(myDoc,i);
-				}	
+			sortGroups(myDoc);
+			
 		}catch(e){
 			alert("ERROR: Could not move Elements to group" + e);
 			exit();
 		}
 		try{
-// first we move the normal ones to the front
-		sortInGroupByPriorityNormal(myDoc);
+// first we move the normal ones to the front than the focus small stays at end
+		sortInGroupByPriority(myDoc);
 		}catch(e){
 			
 			alert("ERROR: Could not move the normal Elements in group" + e);
 			exit();	
 		}
 		
-		try{
-// than we move the fokus to the front
-			sortInGroupByPriorityFocus(myDoc);
-			}catch(e){
+
+			try{makeImgElement(myDoc);
+			}catch (e){
 				
-				alert("ERROR: Could not move the fokus Elements in group" + e);
+				alert("ERROR: Could not move the image Elements into new Element group" + e);
 				exit();	
 			}
-			
-// the klein artikel stay at the end
-
-		
 
 
 // -------------------------
@@ -103,12 +97,29 @@ function main(){
 		alert("ERROR: Sorry cant find the page u want\n "+e);
 		exit();
 	}
-	var myFrame = myPage.textFrames.add();
-	myFrame.geometricBounds = myGetColumns(myDoc,myPage);
+	var myParStyles = makeParstylesArray(myDoc);
+	var myCharStyles = makeCharstylesArray(myDoc);
+	
+	
+	placeItems(myDoc,myPage);
+	
+//	var myFrame = myPage.textFrames.add();
+//	myFrame.geometricBounds = myGetColumns(myDoc,myPage);
 
 	alert("Done");
 
 }
+
+
+function placeItems(myDoc,myPage){
+	
+	placeGroup(myDoc,myPage,2);
+	
+
+}
+
+
+
 
 /**
  * the pulldown dialog to choose the page to place the content to
@@ -152,6 +163,7 @@ with (myDialog){
 	}
 }
 
+
 /**
  * a function to check the operating system
  * 
@@ -169,184 +181,6 @@ function checkOS(){
 		myOSBoolean = false;
 		return myOS_is_Windows;
 	}
-}
-
-function processXML(myDoc){
-}
-
-
-/**
- * Set the xml import preferences
- */
-function xmlImportPref(myDoc){
-	
-	myXMLImportPreferences = myDoc.xmlImportPreferences;
-	myXMLImportPreferences.allowTransform = false;
-	myXMLImportPreferences.createLinkToXML = false;
-	myXMLImportPreferences.ignoreUnmatchedIncoming = false;
-	myXMLImportPreferences.ignoreWhitespace = false;
-	myXMLImportPreferences.importCALSTables = false;
-	myXMLImportPreferences.importStyle = XMLImportStyles.mergeImport;
-	myXMLImportPreferences.importTextIntoTables = false;
-	myXMLImportPreferences.importToSelected = false;
-	myXMLImportPreferences.removeUnmatchedExisting = false;
-	myXMLImportPreferences.repeatTextElements = false;
-}
-
-
-/**
- * this makes attributes from the element artikelInformation
- * 
- * @param myDoc
- * @returns nothing
- */
-function makeAttributesFromInfo(myDoc){
-
-	var myRuleSet = new Array(new findInfoElement());
-	with(myDoc){
-	var elements = xmlElements;
-	__processRuleSet(elements.everyItem(), myRuleSet);
-
-	}
-}
-	
-/**
- * this is the RuleSet for makeAttributesFromInfo
- * 
- * @returns nothing
- */
-function findInfoElement(){
-	this.name = "findInfoElement";
-	this.xpath = "/Root/seite/artikel/artikelInformation";
-	this.apply = function(myElement, myRuleProcessor){
-		var myItem;
-			for(var i = 0; i < myElement.xmlElements.length; i++){
-				
-			myItem= myElement.xmlElements.item(i);
-			
-			myElement.parent.xmlAttributes.add(myItem.markupTag.name, myItem.texts.item(0).contents);	
-			}
-		}
-
-}
-/**
- * 
- * @param myDoc
- * @returns nothing
- */
-function sortInGroupByPriorityFocus(myDoc){
-
-	var myRuleSet = new Array(new sortFocus());
-	with(myDoc){
-	var elements = xmlElements;
-	__processRuleSet(elements.everyItem(), myRuleSet);
-
-	}
-	
-
-}
-	
-/**
- * 
- * @returns nothing
- */
-function sortFocus(){
-	this.name = "sortFocus";
-	this.xpath = "/Root/seite/group/artikel[@iPrioritaet ='fokus']";
-	this.apply = function(myElement, myRuleProcessor){
-		__skipChildren(myRuleProcessor);
-		myElement.move(LocationOptions.before,myElement.parent.xmlElements.item(0));
-		}
-
-}
-/**
- * 
- * @param myDoc
- * @returns nothing
- */
-function sortInGroupByPriorityNormal(myDoc){	
-	var myRuleSet = new Array(new sortNormal());
-	with(myDoc){
-	var elements = xmlElements;
-	__processRuleSet(elements.everyItem(), myRuleSet);
-
-	}
-}
-function sortNormal(){
-	this.name = "sortNormal";
-	this.xpath = "/Root/seite/group/artikel[@iPrioritaet ='normal']";
-	this.apply = function(myElement, myRuleProcessor){
-		__skipChildren(myRuleProcessor);
-		myElement.move(LocationOptions.before,myElement.parent.xmlElements.item(0));
-		}
-
-}
-
-/**
- * reorganizes the xmlStructure in element <seite> to groups
- * 
- * @param myDoc
- * @param count
- * @returns
- */
-function sortToGroupsByAttributes(myDoc,count){
-
-	var myRuleSet = new Array(new findGroupAttribute(count));
-	with(myDoc){
-	var elements = xmlElements;
-	__processRuleSet(elements.everyItem(), myRuleSet);
-
-	}
-}
-
-/**
- * moves the grouped items into a new xmlElement needed for
- * sortToGroupsByAttributes(myDoc,count) needs the for loop to process
- * 
- * @param count
- * @returns
- */
-function findGroupAttribute(count){
-
-	this.name = "findGroupAttribute";
-	this.xpath = "/Root/seite/artikel[@iGruppenFarbe ='"+count+". Gruppenfarbe']";
-	this.apply = function(myElement, myRuleProcessor){
-		__skipChildren(myRuleProcessor);
-		myElement.move(LocationOptions.UNKNOWN,myElement.parent.xmlElements.item(count));
-		}
-	
-}
-
-/**
- * this makes new elements for grouping all the <artikel> elements
- * 
- * @param myDoc
- * @returns
- */
-function makeGroupElements(myDoc){
-	var myRuleSet = new Array(new findPage());
-	with(myDoc){
-	var elements = xmlElements;
-	__processRuleSet(elements.everyItem(), myRuleSet);
-	}
-}
-/**
- * this is the function for makeGroupElements
- * 
- * @returns
- */
-function findPage(){
-	this.name = "findPage";
-	this.xpath = "/Root/seite";
-	this.apply = function(myElement, myRuleProcessor){
-		
-			for(var i = 10; i >= 0; i--){
-			var myNewGroupElement = myElement.xmlElements.add("group");
-			myNewGroupElement.xmlAttributes.add("id",i.toString());
-			myNewGroupElement.move(LocationOptions.AT_BEGINNING,myElement);
-			}
-		}
-
 }
 
 /**
