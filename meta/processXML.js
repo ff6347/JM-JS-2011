@@ -67,18 +67,50 @@ function getGroupsFocus(myDoc,myPage,count,itemCounter){
  * basic get columns needs an iterator
  */
 function myGetColumns(myDoc, myPage,itemCounter){
+
+	
+	
 	var myPageWidth = myDoc.documentPreferences.pageWidth;
 	var myPageHeight = myDoc.documentPreferences.pageHeight
 	var myPageColumnCount= myPage.marginPreferences.columnCount;
 	var myPageColumnGutterWidth= myPage.marginPreferences.columnGutter;
+	var myTopMargin = myPage.marginPreferences.top;
+	var myBottomMargin = myPage.marginPreferences.bottom;
+	var myLeftMargin =  myPage.marginPreferences.left;
+	var myRightMargin = myPage.marginPreferences.right;
+	var myColumnsWidth = myPageWidth - myLeftMargin - myRightMargin - (myPageColumnGutterWidth *(myPageColumnCount-1));
+	var myColumnWidth = myColumnsWidth / myPageColumnCount;
+	
+//	alert(" a column has :"+myColumnWidth + "mm");
+	
+	var myFocusHeight = (myPageHeight - myTopMargin - myBottomMargin)/2;
+	var myNormalHeight = (myPageHeight - myTopMargin - myBottomMargin)/4;
+	var mySmallHeight;
 
-	var myX1 = myPage.marginPreferences.left;
+	if(myPageColumnCount == 3){
+		
+//		alert("there are 3 colums");
+		
+	}else if(myPageColumnCount==4){
+		
+		
+	}
+	
+	
+	if(itemCounter==0){
+		var myX1 = myPage.marginPreferences.left;
+	}else{
+		var myX1 = myPage.marginPreferences.left + ((myColumnWidth*itemCounter)+(myPageColumnGutterWidth*(itemCounter)));
+	}
 	var myY1 = myPage.marginPreferences.top;
 	var myX2 = myX1
 		+((myPageWidth - myPage.marginPreferences.left
 		-myPage.marginPreferences.right
 		-(myPageColumnGutterWidth * (myPageColumnCount-1))) / myPageColumnCount);
 	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
+	
+//	alert("top "+myTopMargin+" Left "+myLeftMargin+" bottom "+myBottomMargin+" right "+myRightMargin);
+//	return[myTopMargin,myLeftMargin,myBottomMargin,myRightMargin];
 	return [myY1, myX1, myY2, myX2];
 }
 

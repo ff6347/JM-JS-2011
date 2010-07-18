@@ -183,21 +183,21 @@ function checkOS(){
 	}
 }
 
-/**
- * basic get columns needs an iterator
- */
-function myGetColumns(myDoc, myPage){
-	var myPageWidth = myDoc.documentPreferences.pageWidth;
-	var myPageHeight = myDoc.documentPreferences.pageHeight
-	var myPageColumnCount= myPage.marginPreferences.columnCount;
-	var myPageColumnGutterWidth= myPage.marginPreferences.columnGutter;
-
-	var myX1 = myPage.marginPreferences.left;
-	var myY1 = myPage.marginPreferences.top;
-	var myX2 = myX1
-		+((myPageWidth - myPage.marginPreferences.left
-		-myPage.marginPreferences.right
-		-(myPageColumnGutterWidth * (myPageColumnCount-1))) / myPageColumnCount);
-	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
-	return [myY1, myX1, myY2, myX2];
-}
+///**
+// * basic get columns needs an iterator
+// */
+//function myGetColumns(myDoc, myPage){
+//	var myPageWidth = myDoc.documentPreferences.pageWidth;
+//	var myPageHeight = myDoc.documentPreferences.pageHeight
+//	var myPageColumnCount= myPage.marginPreferences.columnCount;
+//	var myPageColumnGutterWidth= myPage.marginPreferences.columnGutter;
+//
+//	var myX1 = myPage.marginPreferences.left;
+//	var myY1 = myPage.marginPreferences.top;
+//	var myX2 = myX1
+//		+((myPageWidth - myPage.marginPreferences.left
+//		-myPage.marginPreferences.right
+//		-(myPageColumnGutterWidth * (myPageColumnCount-1))) / myPageColumnCount);
+//	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
+//	return [myY1, myX1, myY2, myX2];
+//}
