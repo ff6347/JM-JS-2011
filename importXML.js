@@ -1,4 +1,4 @@
-/**
+/*
  * @author fabiantheblind
  * 
  * 
@@ -29,6 +29,7 @@ function main(){
 	}
 	try {
 		var myDoc = app.activeDocument;
+		setDocBasics(myDoc);
 	} catch (e) {
 		
 		alert("ERROR: you have no active Document!\n" + e);
@@ -121,13 +122,15 @@ function placeItems(myDoc,myPage){
 
 
 
-/**
+/*
  * the pulldown dialog to choose the page to place the content to
  * 
  * @returns
  */
 function myPageDialogUI(myDoc){
 	var myList = myDoc.pages.everyItem().name;
+	
+	
 	var myDialog = app.dialogs.add({name: "Choose the page to place your content",canCancel: true});
 with (myDialog){
 		// Add a dialog column.
@@ -149,6 +152,27 @@ with (myDialog){
 				}
 			}
 		}
+		
+//		with (dialogColumns.add()){
+//			// Create a border panel.
+//			with (borderPanels.add()){
+//				with (dialogColumns.add()){
+//					// The following line shows how to set a property as you
+//					// create an object.
+//					staticTexts.add({staticLabel: "Select the Group To Place"});
+//				}
+//
+//				with(dialogColumns.add()){
+//				var myDropDown = dropdowns.add({
+//					stringList:myList,
+//					selectedIndex:0
+//			});	
+//				
+//				}
+//			}
+//		}
+		
+		
 		if (myDialog.show() == true) {
 			var myPage;
 			// myTag = myDropDown.selectedIndex;
@@ -164,7 +188,7 @@ with (myDialog){
 }
 
 
-/**
+/*
  * a function to check the operating system
  * 
  * @returns true if the OS is windows
@@ -183,7 +207,7 @@ function checkOS(){
 	}
 }
 
-///**
+///*
 // * basic get columns needs an iterator
 // */
 //function myGetColumns(myDoc, myPage){
@@ -201,3 +225,15 @@ function checkOS(){
 //	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
 //	return [myY1, myX1, myY2, myX2];
 //}
+
+function setDocBasics(myDoc){
+	with	(myDoc.documentPreferences){
+		horizontalMeasurementUnits = MeasurementUnits.MILLIMETERS;
+		verticalMeasurementUnits = MeasurementUnits.MILLIMETERS;
+		rulerOrigin = RulerOrigin.PAGE_ORIGIN;
+		documentBleedBottomOffset = "3mm";
+		documentBleedTopOffset = "3mm";
+		documentBleedInsideOrLeftOffset = "3mm";
+		documentBleedOutsideOrRightOffset = "3mm";
+	}
+}

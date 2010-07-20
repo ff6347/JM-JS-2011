@@ -35,29 +35,95 @@ function placeGroup(myDoc,myPage,count){
  * @returns nothing
  */
 function getGroupsFocus(myDoc,myPage,count,itemCounter){
+	
+	var myFocusNum = myDoc.xmlElements.item(0).xmlElements.item(0).xmlElements.item(count).xmlElements.length;
+	alert(myFocusNum);
+//	var myNormalNum
+	var myLine = 0;
+	var myItemImgHeight = new Array;
+	myItemImgHeight[0] = 30;
+	myItemImgHeight[1] = 25;
+	myItemImgHeight[2] = 20;
+	myItemImgHeight[3] = 15;
+	
+	var myItemTxtHeight = new Array;
+	myItemTxtHeight[0] = myItemImgHeight[0] + 20;
+	myItemTxtHeight[1] = myItemImgHeight[1] + 20;
+	myItemTxtHeight[2] = myItemImgHeight[2] = + 20;
+	myItemTxtHeight[3] = myItemImgHeight[3] = + 20;
+	
+	var myLineHeight = new Array;
+	
+	myLineHeight[0] = myItemImgHeight[0] + myItemTxtHeight[0];
+	
+	
+	
 	this.name = "getGroupData";
-	this.xpath = "/Root/seite/group[@id ='"+count+"']/artikel[@iPrioritaet='fokus']";
-	this.apply = function(myElement, myRuleProcessor){
+	this.xpath = "//group[@id ='"+count+"']/artikel";//[@iPrioritaet='fokus']";
+		this.apply = function(myElement, myRuleProcessor){
+			var myColumnNum = myPage.marginPreferences.columnCount;
+			var myLeftMargin = myPage.marginPreferences.columnCount;
+			var myRightMargin= myPage.marginPreferences.columnCount;
+			var myCGutterWidth = myPage.marginPreferences.columnGutter;
+			var myPageWidth = myDoc.documentPreferences.pageWidth;
+			
+			var myOffset = myPageWidth - myLeftMargin*2 - myRightMargin*2 - myCGutterWidth*2  ;// - myCGutterWidth;
+	
+			var myGroup = new Array;
 
-		var myGroup = new Array;
-		var myImages = myElement.xmlElements.item("images");
-		for(var i = 0;i<myImages.xmlElements.length; i++){
-		var myImgFrame = myPage.rectangles.add();
-		myImgFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
+			var myImages = myElement.xmlElements.item("images");
+			for(var i = 0;i< myImages.xmlElements.length; i++){
+				
+		
+				var myImgFrame = myPage.rectangles.add();
+				myImgFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
+		
+				var myImgCount = myImages.xmlElements.length;
+			
+//				alert(myImgCount);
+				var myIMGBounds = new Array;
+				myIMGBounds = myGetColumns(myDoc,myPage,itemCounter);
+				
+				
+				var tempY1 = (myIMGBounds[0] +(i*10))+(myLine*myLineHeight[0]);
+				var tempX1 = myIMGBounds[1]-( myOffset*myLine);
+				var tempY2 = tempY1 + myItemImgHeight[0] -(i*10);
+				var tempX2 = myIMGBounds[3]-( myOffset*myLine);
+				
+				try{
+				myImgFrame.geometricBounds = [tempY1,tempX1,tempY2,tempX2];// = myGetColumns(myDoc,myPage,itemCounter);
+				}catch(e){
+				myImgFrame.geometricBounds = [tempY1,tempX1,tempY1+10,tempX1+10];// = myGetColumns(myDoc,myPage,itemCounter);
+				}
+				myGroup.push(myImgFrame);
+			}
+			
+			
+			var myTextBounds = new Array;
+			myTextBounds = myGetColumns(myDoc,myPage,itemCounter);
+			var Y1 = myTextBounds[0] + myItemImgHeight[0] +(myLine*myLineHeight[0]);
+			var X1 = myTextBounds[1]-( myOffset*myLine);
+			var Y2 = Y1 + myItemTxtHeight[0];
+			var X2 = myTextBounds[3]-( myOffset*myLine);
+	
+			var myFrame = myPage.textFrames.add();
+			myFrame.geometricBounds = [Y1,X1,Y2,X2];//  myGetColumns(myDoc,myPage,itemCounter);
+			var myTextContent = myElement.xmlElements.item("textPlatzieren");
+			myTextContent.placeXML(myFrame);
+			myGroup.push(myFrame);
+			myPage.groups.add(myGroup);
+			
 
-		myImgFrame.geometricBounds = myGetColumns(myDoc,myPage,itemCounter);
-		myGroup.push(myImgFrame);
-		}
-		
-		
-		var myFrame = myPage.textFrames.add();
-		myFrame.geometricBounds = myGetColumns(myDoc,myPage,itemCounter);
-		var myTextContent = myElement.xmlElements.item("textPlatzieren");
-		myTextContent.placeXML(myFrame);
-		myGroup.push(myFrame);
-		myPage.groups.add(myGroup);
-		itemCounter++;
-		alert("ItemCounter: " +itemCounter);
+			alert(myLine);
+			itemCounter++;
+			if(itemCounter%myColumnNum==0){
+				myLine++;
+				
+					}
+			
+//			alert("this is the line " + myLine+" this is the item "+itemCounter);//+ " this is the column " + myColumnNum);
+
+//			alert("ItemCounter: " +itemCounter);
 		}
 
 }
