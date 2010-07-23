@@ -46,3 +46,45 @@ function makeCharstylesArray(myDoc) {
 	}
 	return myStyles
 }
+
+function makeMetaStyle(myDoc){
+	
+	var myName;
+	var myMetaStyle;
+	var MetaParStyle;
+	try {
+		myMetaStyle = myDoc.characterStyles.item("ERROR");
+		myName = myMetaStyle.name;
+	} catch (e) {
+		//The style did not exist, so create it.
+		myMetaStyle = myDoc.characterStyles.add( {
+			name : "ERROR"
+		})
+		with(myMetaStyle){
+			appliedFont = "Geneva";
+			pointSize = 8;
+			
+			
+		}
+	}
+		
+		try {
+			MetaParStyle = myDoc.paragraphStyles.item("ERROR");
+			myName = MetaParStyle.name;
+		} catch (e) {
+			//The style did not exist, so create it.
+			MetaParStyle = myDoc.paragraphStyles.add( {
+				name : "ERROR"
+			})
+			with(MetaParStyle){
+				appliedFont = "Geneva";
+				pointSize = 8;
+				leading = 8;
+
+				
+				
+			}
+		
+	
+}
+}
