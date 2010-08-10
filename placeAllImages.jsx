@@ -24,6 +24,23 @@ function main() {
 
 
 }
+
+function myGetColumns(myDocument, myPage){
+	var myPageWidth = myDocument.documentPreferences.pageWidth;
+	var myPageHeight = myDocument.documentPreferences.pageHeight
+	var myPageColumnCount= myPage.marginPreferences.columnCount;
+	var myPageColumnGutterWidth= myPage.marginPreferences.columnGutter;
+
+	var myX1 = myPage.marginPreferences.left;
+	var myY1 = myPage.marginPreferences.top;
+	var myX2 = myX1
+		+((myPageWidth-myPage.marginPreferences.left
+		-myPage.marginPreferences.right
+		-(myPageColumnGutterWidth* (myPageColumnCount-1))) /myPageColumnCount);
+	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
+	return [myY1, myX1, myY2, myX2];
+}
+
 function myGetBounds(myDocument, myPage){
 	var myPageWidth = myDocument.documentPreferences.pageWidth;
 	var myPageHeight = myDocument.documentPreferences.pageHeight
@@ -56,31 +73,43 @@ function placeImages(theItem, myPage, myDoc){
 	this.name = "placeImages";
 	this.xpath = "//artikel[@iArtikelNr='Art-Nr. "+theItem +"']";
 	this.apply = function(myElement, myRuleProcessor){
+	
+	var myNullObjStyle  = myDoc.objectStyles.item(0);
 
 	var myImages = myElement.xmlElements.item("images");
 	var myGroup = new Array;
 
+	var myTempBounds = new Array;
+	myTempBounds =  myGetColumns(myDoc, myPage);
+	var myY1 = myTempBounds[0];
+	var myX1 = myTempBounds[1];
+	var myY2 = myTempBounds[2];
+	var myX2 = myTempBounds[3];
+	
 
 	for (var i = 0; i<myImages.xmlElements.length ; i++){
 	
 	
 		var myImgFrame = myPage.rectangles.add();
-		myImgFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
+		//myImgFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
 	
 	
 				try{
-						myImgFrame.geometricBounds = [10+(i*10),10,40+(i*10),40];
+						myImgFrame.geometricBounds = [myY1+(i*10),myX1,myY2+(i*10),myX2];
 
 						var myString =  myImages.xmlElements.item(i).xmlAttributes.item(1).value;
 						myImgFrame.place(File(checkOS(myString)));
 						myImgFrame.fit(FitOptions.CENTER_CONTENT);
 						myImgFrame.fit(FitOptions.PROPORTIONALLY);
+						myImgFrame.fit(FitOptions.FRAME_TO_CONTENT);
+						myImgFrame.applyObjectStyle(myNullObjStyle);
+
 						myGroup.push(myImgFrame);
 
 				}catch(e){
 //						alert("WARNING! \r THERE IS  AN IMAGE MISSING! " +e );
 					
-						myImgFrame.geometricBounds = [10+(i*10),10,40+(i*10),40];
+						myImgFrame.geometricBounds = [myY1+(i*10),myX1,myY2+(i*10),myX2];
 						myImgFrame.fillColor = myDoc.swatches.item(2);
 						myImgFrame.fillTint = 42;
 						myGroup.push(myImgFrame);
@@ -93,13 +122,20 @@ function placeImages(theItem, myPage, myDoc){
 			
 		var myBG = myPage.rectangles.add();
 		with(myBG){
-		geometricBounds = [5,5,10,30];
+		geometricBounds = [myY1,myX1,20,myX2];
 		fillColor = myDoc.swatches.item(1);
+		applyObjectStyle(myNullObjStyle);
+
 	}
-	
+		//	myBG.fit(FitOptions.FRAME_TO_CONTENT);
+		
+		//	myUlFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
+		//	myUlFrame.applyObjectStyle(myNullObjStyle);
+
 		var myTextFrame = myPage.textFrames.add();
 	with(myTextFrame){
-		geometricBounds = [5,5,10,30];
+		geometricBounds = [myY1,myX1,myY2,myX2];
+		applyObjectStyle(myNullObjStyle);
 		if (myImages.xmlElements.length == 0) {
 			contents = theItem + " has no images";	
 		}
@@ -109,9 +145,10 @@ function placeImages(theItem, myPage, myDoc){
 
 	}
 	
+	
 		myTextFrame.paragraphs.everyItem().appliedParagraphStyle = myDoc.paragraphStyles.item("ERROR");
 		myTextFrame.paragraphs.everyItem().characters.everyItem().appliedCharacterStyle = myDoc.characterStyles.item("ERROR");
-
+		myTextFrame.fit(FitOptions.FRAME_TO_CONTENT);
 		myGroup.push(myBG);
 		myGroup.push(myTextFrame);
 
