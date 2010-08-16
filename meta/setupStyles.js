@@ -61,7 +61,7 @@ function makeMetaStyle(myDoc){
 			name : "ERROR"
 		})
 		with(myMetaStyle){
-			appliedFont = "Geneva";
+			appliedFont = "Arial";
 			pointSize = 8;
 			
 			
@@ -77,7 +77,7 @@ function makeMetaStyle(myDoc){
 				name : "ERROR"
 			})
 			with(MetaParStyle){
-				appliedFont = "Geneva";
+				appliedFont = "Arial";
 				pointSize = 8;
 				leading = 8;
 
