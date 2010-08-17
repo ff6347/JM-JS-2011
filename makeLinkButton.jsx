@@ -78,6 +78,8 @@ function makeButton(theItem, myPage, myDoc){
 	
 		var myGroup = new Array;
 		var myNullObjStyle = myDoc.objectStyles.item(0);
+		var myPriceObjStyle = myDoc.objectStyles.item("PREIS_schatten");
+
 		var myTempBounds = new Array;
 		myTempBounds = myGetColumns(myDoc, myPage);
 		var myY1 = myTempBounds[0];
@@ -88,20 +90,23 @@ function makeButton(theItem, myPage, myDoc){
 
 		
 		
-		var OY1 = 15;//myY1 + 7.5;
-		var OX1 = 15;//myX1 + 7.5 ;
-		var OY2 = OY1 + 15;
-		var OX2 = OX1 + 15;
+		var OY1 = 19;//myY1 + 7.5;
+		var OX1 = 19.5;//myX1 + 7.5 ;
+		var OY2 = OY1 + 30;
+		var OX2 = OX1 + 30;
 		var myOV01 = myPage.ovals.add();
 		with (myOV01) {
 			geometricBounds = [OY1, OX1 ,OY2 , OX2];
 			applyObjectStyle(myNullObjStyle);	
 		}
 
+
 		try {
 
 		var myString =  myImages.xmlElements.item(0).xmlAttributes.item(1).value;
 		myOV01.place(File(checkOS(myString)));
+		myOV01.fit(FitOptions.CENTER_CONTENT);
+
 		} catch (e) {
 		alert("there is no image available!");
 		}
@@ -109,15 +114,20 @@ function makeButton(theItem, myPage, myDoc){
 		
 		
 		
+		var RY1 = myY1;
+		var RX1 = myX1;
+		var RY2 = RY1 + 53.166;
+		var RX2 = RX1 + 84.279;
+				
 		var myRect01 = myPage.rectangles.add();
 		with (myRect01) {
-			geometricBounds = [myY1, myX1, myY2, myX2];
+			geometricBounds = [RY1, RX1, RY2, RX2];
 			applyObjectStyle(myNullObjStyle);
 		}
 		var myFile  = File.openDialog("Choose the File \"Button_Lupe_Hintergrund.bmp\"");
 		myRect01.place(myFile);
 		myRect01.fit(FitOptions.CENTER_CONTENT);
-		myRect01.fit(FitOptions.PROPORTIONALLY);
+		//myRect01.fit(FitOptions.PROPORTIONALLY);
 		myRect01.fit(FitOptions.FRAME_TO_CONTENT);
 
 		myGroup.push(myRect01);
@@ -126,10 +136,10 @@ function makeButton(theItem, myPage, myDoc){
 		
 		
 		
-		var TY1 = myY1 +7;
-		var TX1 = myX1 + 21;
-		var TY2 = TY1 + 50;
-		var TX2 =  TX1 + 50;
+		var TY1 = 18.861;
+		var TX1 = 32.217;
+		var TY2 = 50;
+		var TX2 = myX2*2;
 		
 		
 		
@@ -143,40 +153,44 @@ function makeButton(theItem, myPage, myDoc){
 		//var myContentElement = myElement.xmlElements.add("buttontext");
 		
 		//myContentElement.insertTextAsContent("Dazu passt:\n", XMLElementPosition.elementStart);
-		var myContentString = "Dazu passt:"+"\n"+
+		var myContentString = "Dazu passt:"+"\r"+
 		myElement.xmlElements.item("artikelInformation").xmlElements.item("iHersteller").contents +"\r"+
-		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelBezeichnung").contents +"\n"+
-		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelBeschreibung").contents +"\n"+
-		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelNr").contents +"\n"+
+		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelBezeichnung").contents +"\r"+
+		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelBeschreibung").contents +"\r"+
+		myElement.xmlElements.item("artikelInformation").xmlElements.item("iArtikelNr").contents +"\r"+
 		"Dies und mehr findet Ihr auf Seite XXX";
 
 		myTF01.contents = myContentString;
-		myTF01.paragraphs.everyItem().appliedParagraphStyle = myDoc.paragraphStyles.item("ERROR");
 		myTF01.characters.everyItem().appliedCharacterStyle = myDoc.characterStyles.item(0);
+
+		
+		myTF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Headline");
+		myTF01.paragraphs.item(1).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Hersteller");
+		myTF01.paragraphs.item(2).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Bezeichnung");
+		myTF01.paragraphs.item(3).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Beschreibung");
+		myTF01.paragraphs.item(4).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Artikelnummer");
+		myTF01.paragraphs.item(5).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Unterzeile");
 		
 		myTF01.texts.everyItem().clearOverrides(OverrideType.all);
 		myTF01.fit(FitOptions.FRAME_TO_CONTENT);
 		myGroup.push(myTF01);
-		
-		
-		
-		
+
 		var myNewPriceElement = myElement.xmlElements.item("preis").duplicate();
 		
-		var PY1 = myY1 +15;
-		var PX1 = myX1 ;
+		var PY1 = 42.411;
+		var PX1 = 28.729 ;
 		var PY2 = PY1 + 50;
 		var PX2 =  PX1 + 50;
 		
 		var myPF01 = myPage.textFrames.add();
 		with (myPF01) {
 			geometricBounds = [PY1, PX1, PY2, PX2];
-			applyObjectStyle(myNullObjStyle);
+			applyObjectStyle(myPriceObjStyle);
 			
 		}
 		myNewPriceElement.placeXML(myPF01);
 		myNewPriceElement.untag();
-		myPF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("PREIS_KLEIN");
+		myPF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("PREIS_KLEIN_aktion");
 		myPF01.fit(FitOptions.FRAME_TO_CONTENT);
 
 		
@@ -191,97 +205,6 @@ function makeButton(theItem, myPage, myDoc){
 	
 }
 
-function placeImages(theItem, myPage, myDoc){
-	this.name = "placeImages";
-	this.xpath = "//artikel[@iArtikelNr='Art-Nr. "+theItem +"']";
-	this.apply = function(myElement, myRuleProcessor){
-	
-	var myNullObjStyle  = myDoc.objectStyles.item(0);
-
-	var myImages = myElement.xmlElements.item("images");
-	var myGroup = new Array;
-
-	var myTempBounds = new Array;
-	myTempBounds =  myGetColumns(myDoc, myPage);
-	var myY1 = myTempBounds[0];
-	var myX1 = myTempBounds[1];
-	var myY2 = myTempBounds[2];
-	var myX2 = myTempBounds[3];
-	
-
-	for (var i = 0; i<myImages.xmlElements.length ; i++){
-	
-	
-		var myImgFrame = myPage.rectangles.add();
-		//myImgFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
-	
-	
-				try{
-						myImgFrame.geometricBounds = [myY1+(i*10),myX1,myY2+(i*10),myX2];
-
-						var myString =  myImages.xmlElements.item(i).xmlAttributes.item(1).value;
-						myImgFrame.place(File(checkOS(myString)));
-						myImgFrame.fit(FitOptions.CENTER_CONTENT);
-						myImgFrame.fit(FitOptions.PROPORTIONALLY);
-						myImgFrame.fit(FitOptions.FRAME_TO_CONTENT);
-						myImgFrame.applyObjectStyle(myNullObjStyle);
-
-						myGroup.push(myImgFrame);
-
-				}catch(e){
-//						alert("WARNING! \r THERE IS  AN IMAGE MISSING! " +e );
-					
-						myImgFrame.geometricBounds = [myY1+(i*10),myX1,myY2+(i*10),myX2];
-						myImgFrame.fillColor = myDoc.swatches.item(2);
-						myImgFrame.fillTint = 42;
-						myGroup.push(myImgFrame);
-
-
-					}
-
-
-			}
-			
-		var myBG = myPage.rectangles.add();
-		with(myBG){
-		geometricBounds = [myY1,myX1,20,myX2];
-		fillColor = myDoc.swatches.item(1);
-		applyObjectStyle(myNullObjStyle);
-
-	}
-		//	myBG.fit(FitOptions.FRAME_TO_CONTENT);
-		
-		//	myUlFrame.appliedObjectStyle = myDoc.objectStyles.item(0);
-		//	myUlFrame.applyObjectStyle(myNullObjStyle);
-
-		var myTextFrame = myPage.textFrames.add();
-	with(myTextFrame){
-		geometricBounds = [myY1,myX1,myY2,myX2];
-		applyObjectStyle(myNullObjStyle);
-		if (myImages.xmlElements.length == 0) {
-			contents = theItem + " has no images";	
-		}
-		else {
-			contents = theItem;
-		}
-
-	}
-	
-	
-		myTextFrame.paragraphs.everyItem().appliedParagraphStyle = myDoc.paragraphStyles.item("ERROR");
-		myTextFrame.paragraphs.everyItem().characters.everyItem().appliedCharacterStyle = myDoc.characterStyles.item("ERROR");
-		myTextFrame.fit(FitOptions.FRAME_TO_CONTENT);
-		myGroup.push(myBG);
-		myGroup.push(myTextFrame);
-
-		
-		myPage.groups.add(myGroup);
-
-
-			
-		};
-
-}
 
 /*
  * a function to check the operating system
