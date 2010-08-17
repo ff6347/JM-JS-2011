@@ -316,7 +316,7 @@ function checkOS(myString){
 function myUI(myDoc, myPage,myPageName, myList,myItemsList){
 	var myNumOItems = 0;
 	
-	var myDialog = app.dialogs.add({name:"PLACE ALL IMAGES", canCancel:true});
+	var myDialog = app.dialogs.add({name:"MAKE BUTTON_LINK", canCancel:true});
 	with(myDialog){
 		//Add a dialog column.
 		with(dialogColumns.add()){
