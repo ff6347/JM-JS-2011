@@ -138,7 +138,7 @@ function makeButton(theItem, myPage, myDoc){
 		
 		var TY1 = 18.861;
 		var TX1 = 32.217;
-		var TY2 = 50;
+		var TY2 = 100;
 		var TX2 = myX2*2;
 		
 		
@@ -161,7 +161,6 @@ function makeButton(theItem, myPage, myDoc){
 		"Dies und mehr findet Ihr auf Seite XXX";
 
 		myTF01.contents = myContentString;
-		myTF01.characters.everyItem().appliedCharacterStyle = myDoc.characterStyles.item(0);
 
 		
 		myTF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Headline");
@@ -170,8 +169,9 @@ function makeButton(theItem, myPage, myDoc){
 		myTF01.paragraphs.item(3).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Beschreibung");
 		myTF01.paragraphs.item(4).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Artikelnummer");
 		myTF01.paragraphs.item(5).appliedParagraphStyle = myDoc.paragraphStyles.item("BUTTON_Unterzeile");
-		
+		myTF01.characters.everyItem().appliedCharacterStyle = myDoc.characterStyles.item(0);
 		myTF01.texts.everyItem().clearOverrides(OverrideType.all);
+
 		myTF01.fit(FitOptions.FRAME_TO_CONTENT);
 		myGroup.push(myTF01);
 
@@ -190,7 +190,7 @@ function makeButton(theItem, myPage, myDoc){
 		}
 		myNewPriceElement.placeXML(myPF01);
 		myNewPriceElement.untag();
-		myPF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("PREIS_KLEIN_aktion");
+		myPF01.paragraphs.item(0).appliedParagraphStyle = myDoc.paragraphStyles.item("PREIS_KLEIN");
 		myPF01.fit(FitOptions.FRAME_TO_CONTENT);
 
 		

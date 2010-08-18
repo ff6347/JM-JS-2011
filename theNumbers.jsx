@@ -1,62 +1,20 @@
 /*
 written by fabiantheblind 4 JM-2011
 */
-#include "./meta/glue code.jsx";
+
 
 main();
 function main() {
 
 	var myDoc = app.activeDocument;
-	//var myItemsList = new Array;
 	var myList;
 	var myPageName;
 	var myPage;
-	//myDoc.paragraphStyles.item("ERROR").appliedFont = "Arial";
-
 	myList = myDoc.pages.everyItem().name;
-
-	//var myItemsListElement =  myDoc.xmlElements.item(0).xmlElements.item("itemsList");
-	//for (var i =0 ;i < myItemsListElement.xmlElements.length;i++){
-	//	myItemsList[i] = myItemsListElement.xmlElements.item(i).markupTag.name;	
-	//}
-	
 	myUI(myDoc, myPage,myPageName, myList);
 
 
 
-}
-
-function myGetColumns(myDocument, myPage){
-	var myPageWidth = myDocument.documentPreferences.pageWidth;
-	var myPageHeight = myDocument.documentPreferences.pageHeight
-	var myPageColumnCount= myPage.marginPreferences.columnCount;
-	var myPageColumnGutterWidth= myPage.marginPreferences.columnGutter;
-
-	var myX1 = myPage.marginPreferences.left;
-	var myY1 = myPage.marginPreferences.top;
-	var myX2 = myX1
-		+((myPageWidth-myPage.marginPreferences.left
-		-myPage.marginPreferences.right
-		-(myPageColumnGutterWidth* (myPageColumnCount-1))) /myPageColumnCount);
-	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
-	return [myY1, myX1, myY2, myX2];
-}
-
-function myGetBounds(myDocument, myPage){
-	var myPageWidth = myDocument.documentPreferences.pageWidth;
-	var myPageHeight = myDocument.documentPreferences.pageHeight
-	if(myPage.side == PageSideOptions.leftHand){
-		var myX2 = myPage.marginPreferences.left;
-		var myX1 = myPage.marginPreferences.right;
-	}
-	else{
-		var myX1 = myPage.marginPreferences.left;
-		var myX2 = myPage.marginPreferences.right;
-	}
-	var myY1 = myPage.marginPreferences.top;
-	var myX2 = myPageWidth - myX2;
-	var myY2 = myPageHeight - myPage.marginPreferences.bottom;
-	return [myY1, myX1, myY2, myX2];
 }
 
 
@@ -127,36 +85,6 @@ function makeNumbers(myDoc,myPage,theNumber){
 	
 }
 
-/*
- * a function to check the operating system
- * 
- * @returns true if the OS is windows
- */
-function checkOS(myString){
-	var myOS = $.os;
-	var myOSSubString = myOS.charAt(0);
-	var myOSBoolean;
-	if (myOSSubString == "w" || myOSSubString == "W") {
-		myOSBoolean = true;
-	}
-	else {
-		myOSBoolean = false;
-	}
-
-	if (myOSBoolean == true) {
-		//this is for windows
-
-		var myHREFString = myString;
-		var myHREFSubString = myHREFString.substring(8);
-
-		return myHREFSubString;
-	
-	} else {
-		// this is for macintosh
-		return myString;
-	}
-
-}
 function myUI(myDoc, myPage,myPageName, myList){
 	var myNumOItems = 0;
 
