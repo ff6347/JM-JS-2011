@@ -105,6 +105,19 @@ app.activeDocument.changeGrep();
 	
 }
 
+try {
+	
+
+app.loadFindChangeQuery ('JM__INTERPUNKTION', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep();
+} catch (e) {
+		myErrorLog = myErrorLog + e.toString() + " JM__INTERPUNKTION.xml could not be processed  \n";
+		
+
+	
+}
+
 		var myFile = myLogFile;   
 		var myData = myErrorLog;
 		writeData (myFile, myData );
