@@ -12,6 +12,19 @@ function main() {
 	var myFileContent = myLogFile.read();
 	var myErrorLog = myFileContent +"\n"+"Starting Log file at "+myDate +"\n";
 
+
+try {
+	app.loadFindChangeQuery ('JM__ZOLL_HIN', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep(); 
+
+} catch (e) {
+
+	myErrorLog = myErrorLog + e.toString() + " JM__ZOLL_HIN.xml could not be processed  \n";
+	
+	
+}
+
 try {
 	app.loadFindChangeQuery ('JM__ANAB_01', SearchModes.grepSearch); 
 myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
@@ -35,6 +48,18 @@ app.activeDocument.changeGrep();
 	
 		myErrorLog = myErrorLog + e.toString() + " JM__ANAB_02.xml could not be processed  \n";
 
+	
+}
+
+try {
+	app.loadFindChangeQuery ('JM__ZOLL_ZURUECK', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep(); 
+
+} catch (e) {
+
+	myErrorLog = myErrorLog + e.toString() + " JM__ZOLL_ZURUECK.xml could not be processed  \n";
+	
 	
 }
 
@@ -117,6 +142,9 @@ app.activeDocument.changeGrep();
 
 	
 }
+
+
+
 
 		var myFile = myLogFile;   
 		var myData = myErrorLog;
