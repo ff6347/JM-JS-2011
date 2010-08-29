@@ -5,8 +5,30 @@
 
 var myDoc = app.activeDocument;
 
-var	myPars = app.selection[0].paragraphs.everyItem();
-var myChars = app.selection[0].characters.everyItem();
+try {
+	var	myPars = app.selection[0].paragraphs.everyItem();
+
+} catch (e) {
+	
+}
+
+
+try {
+	var myChars = app.selection[0].characters.everyItem();
+
+} catch (e) {
+	
+}
+
+
+try {
+	var myImg = app.selection[0].images.item(0);
+
+} catch (e) {
+	
+}
+
+
 
 try {
 	 	myPars.ruleAboveColor  = myDoc.swatches.item(1);
@@ -29,6 +51,18 @@ try {
 } catch (e) {
 	
 }
+
+try {
+		myImg.fillColor =  myDoc.swatches.item(1);
+
+} catch (e) {
+	
+}
+
+
+
+
+
 
 
 alert("done");
