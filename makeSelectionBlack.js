@@ -5,8 +5,10 @@
 
 var myDoc = app.activeDocument;
 
+for(var i = 0; i < app.selection.length; i++ ){
+
 try {
-	var	myPars = app.selection[0].paragraphs.everyItem();
+	var	myPars = app.selection[i].paragraphs.everyItem();
 
 } catch (e) {
 	
@@ -14,7 +16,7 @@ try {
 
 
 try {
-	var myChars = app.selection[0].characters.everyItem();
+	var myChars = app.selection[i].characters.everyItem();
 
 } catch (e) {
 	
@@ -22,7 +24,7 @@ try {
 
 
 try {
-	var myImg = app.selection[0].images.item(0);
+	var myImg = app.selection[i].images.item(0);
 
 } catch (e) {
 	
@@ -59,7 +61,7 @@ try {
 	
 }
 
-
+}
 
 
 
