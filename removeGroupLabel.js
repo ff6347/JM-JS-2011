@@ -30,5 +30,5 @@ for (var i = 0; i < app.selection.length; i++) {
 	}
 } 
 
-alert("done");
+
  
