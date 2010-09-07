@@ -3,6 +3,10 @@
  a quick Textwhitener
  */
 
+
+
+
+
 var myDoc = app.activeDocument;
 
 
