@@ -47,7 +47,7 @@ try {
 	
 }
 
- if(app.selection[i] instanceof TextFrame){
+// if(app.selection[i] instanceof TextFrame){
  	
 try {
 			var myChars = app.selection[i].characters.everyItem();
@@ -89,7 +89,7 @@ try {
 }
 
 	
-	}
+	//}
 
 
 }
