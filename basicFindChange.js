@@ -89,6 +89,30 @@ app.activeDocument.changeGrep();
 	
 }
 
+try {
+	
+app.loadFindChangeQuery ('JM__PUNKTBLANK', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep();
+
+} catch (e) {
+		myErrorLog = myErrorLog + e.toString() + " JM__PUNKTBLANK.xml could not be processed  \n";
+
+	
+}
+
+try {
+	
+app.loadFindChangeQuery ('JM__KOMMABLANK', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep();
+
+} catch (e) {
+		myErrorLog = myErrorLog + e.toString() + " JM__KOMMABLANK.xml could not be processed  \n";
+
+	
+}
+
 
 
 try {
