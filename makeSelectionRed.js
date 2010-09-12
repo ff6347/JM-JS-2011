@@ -4,8 +4,9 @@
 
 var myDoc = app.activeDocument;
 
-var myColor;
+var myColor = myDoc.swatches.item("ERRORRED");
 
+/*
 try {
 	 myColor = myDoc.swatches.add({name:"ERRORRED", model:ColorModel.process, colorValue:[0, 100, 100, 0]});
 
@@ -14,6 +15,7 @@ try {
 	myColor = myDoc.swatches.item("ERRORRED");
 	
 }
+*/
 
 
 
@@ -29,7 +31,7 @@ try {
 	
 }
 try {
-		myImg.fillColor =   myColor;//myDoc.swatches.item(2);
+		myImg.fillColor =   myDoc.swatches.item("JM_ROT");
 
 	} catch (e) {
 	
@@ -38,7 +40,7 @@ try {
 	if( app.selection[i] instanceof Polygon ){
 	
 try {
-		app.selection[i].fillColor =  myColor;// myDoc.swatches.item(2);
+		app.selection[i].fillColor =  myDoc.swatches.item("JM_ROT");
 
 } catch (e) {
 	
@@ -66,7 +68,14 @@ try {
 
 		
 try {
-			myChars.fillColor =  myColor;// myDoc.swatches.item(2);
+			myChars.fillColor =  myDoc.swatches.item("JM_ROT");
+} catch (e) {
+	
+}
+
+		
+try {
+			myPars.ruleAboveColor  = myDoc.swatches.item("JM_ROT");
 
 } catch (e) {
 	
@@ -74,15 +83,7 @@ try {
 
 		
 try {
-			myPars.ruleAboveColor  = myColor;// myDoc.swatches.item(2);
-
-} catch (e) {
-	
-}
-
-		
-try {
-			myPars.ruleBelowColor  =  myColor;//myDoc.swatches.item(2);
+			myPars.ruleBelowColor  =  myDoc.swatches.item("JM_ROT");
 
 } catch (e) {
 	
