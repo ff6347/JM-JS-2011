@@ -64,6 +64,24 @@ app.activeDocument.changeGrep();
 }
 
 
+try {
+	app.loadFindChangeQuery ('JM__EURO_hin', SearchModes.grepSearch); 
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep(); 
+
+} catch (e) {
+
+	myErrorLog = myErrorLog + e.toString() + " JM__EURO_hin.xml could not be processed  \n";
+	
+	
+}
+
+
+
+
+
+
+
 
 try {
 	app.loadFindChangeQuery ('JM__APOSTROPH', SearchModes.grepSearch); 
@@ -126,6 +144,19 @@ app.activeDocument.changeGrep();
 	
 }
 
+try {
+	
+app.loadFindChangeQuery ('JM__EURO_zurueck', SearchModes.grepSearch); 
+
+myErrorLog = myErrorLog +  myDoc.findGrep().toString() +"\n";
+app.activeDocument.changeGrep();
+
+
+} catch (e) {
+		myErrorLog = myErrorLog + e.toString() + " JM__EURO_zurueck.xml could not be processed  \n";
+
+	
+}
 
 try {
 	
