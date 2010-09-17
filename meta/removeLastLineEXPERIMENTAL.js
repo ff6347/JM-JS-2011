@@ -1,0 +1,1 @@
+var myDoc = app.activeDocument;  for (var i = 0; i < app.selection.length; i++) { 	 	try { 		var myImg = app.selection[i].lines.item(-1).remove(); 	 	}  	catch (e) { 	 	}		var myChar =  app.selection[i].characters.item(-1).remove(); 	 }
