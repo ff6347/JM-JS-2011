@@ -57,18 +57,43 @@ function makeNumbers(myDoc,myPage,theNumber){
 		
 			var myGroup = new Array;
 		var myRect =  myPage.rectangles.add();
+		myRect.applyObjectStyle( myDoc.objectStyles.item(0));
 			with(myRect){
 				geometricBounds = [myRY1 + theRow , myRX1 + theValue, myRY2 + theRow ,myRX2 + theValue];
 				fillColor = myDoc.swatches.item(2);
-
+				
 			}
+			
+			
 			myGroup.push(myRect);
 
 			var myTF =  myPage.textFrames.add();
+			myTF.applyObjectStyle( myDoc.objectStyles.item(0));
+			
 			with(myTF){
 				geometricBounds = [myTFY1+ theRow ,myTFX1 + theValue, myTFY2 + theRow ,myTFX2 + theValue];
 				contents = myNumbers[i];
+				try {
 				paragraphs.everyItem().appliedParagraphStyle = myDoc.paragraphStyles.item("LAUFNUMMER_am_Bild"); 
+				}catch(e){
+					alert("the Paragraphstyle \"LAUFNUMMER_am_Bild\" doesnot exist.\nIwill try to build the numbers by hand");
+					paragraphs.everyItem().pointSize = "12pt";
+					paragraphs.everyItem().justification = Justification.CENTER_ALIGN;
+					
+					paragraphs.everyItem().fillColor = myDoc.swatches.item(1);
+					
+					
+				}
+				
+				try{
+					
+					paragraphs.everyItem().appliedFont = "JM Bertram Symbol";
+					
+				}catch(e){
+					
+					alert("Sorry the Font \"JM Bertram Symbol\" does not exist. Sry");
+				}
+				
 				
 				theValue = theValue + 5;
 			}
@@ -85,7 +110,8 @@ function makeNumbers(myDoc,myPage,theNumber){
 	
 }
 
-function myUI(myDoc, myPage,myPageName, myList){
+
+function myUI(myDoc, myPage,myPageName, myList){
 	var myNumOItems = 0;
 
 	
