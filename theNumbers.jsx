@@ -2,27 +2,52 @@
 written by fabiantheblind 4 JM-2011
 */
 
+// theNumbers.jsx
+// this script makes some tiny numbers for the JM Layout
+// it needs the font JM Bertram
+// Copyright (C) 2011 Fabian "fabiantheblind" Morón Zirfas
+// http://www.the-moron.net
+// info [at] the - moron . net
+
+// This program is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// any later version.
+
+// This program is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <http://www.gnu.org/licenses/.
+
 
 main();
 function main() {
 
-	var myDoc = app.activeDocument;
-	var myList;
-	var myPageName;
-	var myPage;
-	myList = myDoc.pages.everyItem().name;
-	myUI(myDoc, myPage,myPageName, myList);
+	var doc = app.activeDocument;
+	// var myList;
+	// var myPageName;
+	// var myPage ;
+	var obj = new Object;
+	obj.strings =  ["1","2","3","4","5","6","7","8","9","0","§","q","w","e","r","t","z","u","i","o","p","a","s","d","f","g","h","j","k","l"];
+	
+	obj.pgnames = doc.pages.everyItem().name;
+	obj.pgn = "";
+	myUI( doc , obj.pgn ,obj);
 
 
 
 }
 
-
-function makeNumbers(myDoc,myPage,theNumber){
-		var mySuperGroup = new Array;
-		var myNumbers = new Array;
-	myNumbers = ["1","2","3","4","5","6","7","8","9","0","§","q","w","e","r","t","z","u","i","o","p","a","s","d","f","g","h","j","k","l"];
+// this function builds the numbers
+function makeNumbers(myDoc,myPage,theNumber,obj){
+	var styleErrorWarning = false;
+	var fontErrorWarning = false;
 	
+		var mySuperGroup = new Array;
+
 	var myRY1 = 10+ 0.214;
 	var myRX1 = 10 + 2.586 ;
 	var myRY2 = myRY1 + 2.5;
@@ -72,17 +97,18 @@ function makeNumbers(myDoc,myPage,theNumber){
 			
 			with(myTF){
 				geometricBounds = [myTFY1+ theRow ,myTFX1 + theValue, myTFY2 + theRow ,myTFX2 + theValue];
-				contents = myNumbers[i];
+				contents = obj.strings[i];
 				try {
 				paragraphs.everyItem().appliedParagraphStyle = myDoc.paragraphStyles.item("LAUFNUMMER_am_Bild"); 
 				}catch(e){
+					
+				if(styleErrorWarning == false){
 					alert("the Paragraphstyle \"LAUFNUMMER_am_Bild\" doesnot exist.\nIwill try to build the numbers by hand");
+					styleErrorWarning = true;
+					}
 					paragraphs.everyItem().pointSize = "12pt";
 					paragraphs.everyItem().justification = Justification.CENTER_ALIGN;
-					
 					paragraphs.everyItem().fillColor = myDoc.swatches.item(1);
-					
-					
 				}
 				
 				try{
@@ -91,114 +117,78 @@ function makeNumbers(myDoc,myPage,theNumber){
 					
 				}catch(e){
 					
+					if(fontErrorWarning == false){
 					alert("Sorry the Font \"JM Bertram Symbol\" does not exist. Sry");
+					fontErrorWarning = true;
+					}
 				}
-				
 				
 				theValue = theValue + 5;
 			}
 					myGroup.push(myTF);
 			var myMetaGroup = myPage.groups.add(myGroup);
-			mySuperGroup.push(myMetaGroup);
+			// if you only make one numnber there is no super group
+			try{ mySuperGroup.push(myMetaGroup); }catch(e){}
+			
 	theItemCounter++;
 	}
 	
-	myPage.groups.add(mySuperGroup);
+	;
+	try{myPage.groups.add(mySuperGroup);}catch(e){}
 
 
 	
 	
 }
 
+// this is the dialoge
+// panels are nice but not that easy to debug.
+// InDesign dialogs are prety fast
 
-function myUI(myDoc, myPage,myPageName, myList){
-	var myNumOItems = 0;
-
-	
-	var myDialog = app.dialogs.add({name:"MAKE NUMBERS", canCancel:true});
+function myUI(myDoc,myPageName,obj){
+	var myDialog = app.dialogs.add({name:"Make Some Numbers", canCancel:true});
 	with(myDialog){
 		//Add a dialog column.
 		with(dialogColumns.add()){
-			//Create a border panel.
-
-
-
-	
-				var itemSelector = enablingGroups.add({staticLabel: "how many numbers do you need? ",
-				 checkedState: true,minWidth :250});
-			with(itemSelector){
-				with(dialogColumns.add()){
-					//Create a pop-up menu ("dropdown") control.
-					var myNumberDropdown = dropdowns.add({
-
-						stringList: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16",
-						"17","18","19","20","21","22","23","24","25","26","27","28","29","30"]
-						//selectedIndex:0
-						});
+			//Create a row 
+			with(dialogRows.add()){
+				var txtNum = staticTexts.add({staticLabel:"Numbers--> ",minWidth:100});				
+				var myNumberDropdown = dropdowns.add({
+					stringList: ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16",
+					"17","18","19","20","21","22","23","24","25","26","27","28","29","30"], selectedIndex:0,minWidth:75
+					});
 				}
-				}
-			
-			//Create another border panel.
-				var pageSelector = enablingGroups.add({
-					staticLabel: "choose page",
-					checkedState: true,
-			
-				});
-				with (pageSelector) {
 				
-					with (dialogColumns.add()) {
-						staticTexts.add({
-							staticLabel: "chose page to place"
-						});
-					}
-					with (dialogColumns.add()) {
-						//Create a pop-up menu ("dropdown") control.
-						var myPageDropdown = dropdowns.add({
-							stringList: myList,
-							selectedIndex: 0
-						});
-					}
-
-				}
-			
-
-			
+				// another row
+				with(dialogRows.add()){
+				var txtPg = staticTexts.add({staticLabel:"Pages--> ",minWidth:100});
+				var myPageDropdown = dropdowns.add({stringList: myDoc.pages.everyItem().name, selectedIndex: 0,minWidth:75 });
 		}
+
+		}
+		with(dialogColumns.add()){
+		var gutter = staticTexts.add({staticLabel:"  ",minWidth:25});
+	}
 	
 	//Display the dialog box.
 	if(myDialog.show() == true){
 
+			myPageName = obj.pgnames[ myPageDropdown.selectedIndex ];
+		//	myPageName =  myList[myPageDropdown.selectedIndex];
 
-//		var myPage;
-//		var myPageName;
-//		page selector box
-		if(pageSelector.checkedState!=true ){
-			myPage = myDoc.pages.add();
-			myPageName = myPage.name;
-		}else {
-//			myPage = myList[myPageDropdown.selectedIndex];
-			myPageName =  myList[myPageDropdown.selectedIndex];
-		}
-
-		//var preTheItem = myItemsList[myArtikelDropdown.selectedIndex];
-		//var theItem = preTheItem.substring(4);
-		var mySelectedNumber  =myNumberDropdown.selectedIndex;
-
+		var mySelectedNumber  = myNumberDropdown.selectedIndex;
 		myDialog.destroy();
 		
- 		myPage = myDoc.pages.item(myPageName);
+ 		var p = myDoc.pages.item(myPageName);
 		
-		//placeData(myDoc,myPage,theItem);
-		makeNumbers(myDoc,myPage,mySelectedNumber);
-
-
+		// call the numbers function
+		makeNumbers(myDoc , p ,mySelectedNumber,obj);
 
 	}else{
-		
-		myDialog.destroy();
-		alert("all that thinking for nothing? Better luck nexttime!");
-		
-	}
+
+ myDialog.destroy(); alert("all that thinking for nothing? Better luck nexttime!");
+
+ }
 
 	}	  
 }
